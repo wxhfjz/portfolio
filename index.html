@@ -493,6 +493,7 @@ section{padding:90px 48px;max-width:1100px;margin:0 auto;position:relative;}
 /* 奖项名称可点击 */
 .award-name{cursor:pointer;text-decoration:underline;text-decoration-color:transparent;transition:text-decoration-color .25s;}
 .award-name:hover{text-decoration-color:var(--accent);}
+.award-name.noimg{cursor:default;text-decoration:none;}
 /* 证书档案网格 */
 .cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin-top:18px;}
 .cert-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);padding:12px;text-align:center;transition:all .25s ease;cursor:pointer;position:relative;overflow:hidden;}
@@ -1460,7 +1461,7 @@ section{padding:96px 48px;}
       <div class="edu-detail">GPA <strong>3.8 / 5.0</strong> · 排名 <strong>2 / 62</strong>（前 3%）· 工学学士</div>
     </div>
   </div>
-  <h4 style="font-size:17px;margin-bottom:4px;color:var(--ink);" class="animate fade-up">荣誉奖项</h4>
+  <h4 style="font-size:17px;margin-bottom:4px;color:var(--ink);" class="animate fade-up">荣誉奖项与证书</h4>
   <div class="awards-grid">
 <div class="award-card animate fade-up delay-1">
       <div class="award-icon">🏆</div>
@@ -1501,6 +1502,22 @@ section{padding:96px 48px;}
         <span class="award-level">校级</span>
       </div>
       <div class="award-date">2024.05</div>
+    </div>
+<div class="award-card animate fade-up delay-3">
+      <div class="award-icon">☁️</div>
+      <div class="award-info">
+        <div class="award-name" data-cert="huawei-hccda" onclick="openCertLightbox(this.dataset.cert, this.textContent)">华为云人工智能入门级开发者认证（HCCDA-AI）</div>
+        <span class="award-level">云厂商认证</span>
+      </div>
+      <div class="award-date">2026.09</div>
+    </div>
+<div class="award-card animate fade-up delay-3">
+      <div class="award-icon">🤖</div>
+      <div class="award-info">
+        <div class="award-name noimg">人工智能训练师三级</div>
+        <span class="award-level">技能证书</span>
+      </div>
+      <div class="award-date">2026</div>
     </div>
   </div>
 
