@@ -1276,6 +1276,17 @@ section{padding:96px 48px;}
 .proj-modal-body .proj-detail>section{max-width:100%;}
 @media (max-width:640px){.proj-modal{padding:0;}.proj-modal-inner{border-radius:0;min-height:100vh;}.proj-modal-body{padding:6px 18px 44px;}}
 
+/* 弹层内排版：复用 #projects 的口径，抵消全站 section 大内边距（弹层在 #projects 之外，选择器不继承） */
+.proj-modal-body section{padding:0;margin:0;max-width:none;display:block;}
+.proj-modal-body section + section{margin-top:56px;}
+.proj-modal-body p,.proj-modal-body li{text-align:justify;text-justify:inter-ideograph;}
+.proj-modal-body ul{margin:0 0 16px;padding-left:20px;}
+.proj-modal-body li{margin-bottom:8px;}
+.proj-modal-body .note{margin:20px 0;padding:16px 20px;}
+.proj-modal-body .two{margin:20px 0;}
+.proj-modal-body .ui-grid{margin:24px 0;}
+.proj-modal-body h3.sec:first-of-type{margin-top:24px;}
+.proj-modal-body h2.project-banner:first-child{margin-top:0;}
 </style>
 </head>
 <body>
