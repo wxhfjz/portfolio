@@ -399,9 +399,19 @@ section{padding:90px 48px;max-width:1100px;margin:0 auto;position:relative;}
 
 .skill-desc{
   font-size:var(--fs-sm);color:var(--sub);line-height:1.75;
-  margin-bottom:16px;padding-bottom:14px;
-  border-bottom:1px dashed var(--line);
+  margin-bottom:12px;
 }
+.skill-hl{
+  display:flex;align-items:flex-start;gap:8px;
+  font-size:12.5px;color:var(--sub);line-height:1.6;
+  padding-top:12px;border-top:1px dashed var(--line);
+  margin-bottom:16px;
+}
+.skill-hl::before{
+  content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--accent);margin-top:7px;flex-shrink:0;
+}
+.skill-hl b{color:var(--ink);font-weight:700;}
 .skill-tags{
   display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;
 }
@@ -1390,7 +1400,8 @@ section{padding:96px 48px;}
           <div class="skill-name">产品能力</div>
         </div>
       </div>
-      <div class="skill-desc">从需求洞察到方案落地的完整闭环，主导 68 页产品设计说明书与 13 张业务表结构设计。</div>
+      <div class="skill-desc">从需求洞察到方案落地的完整闭环：用户访谈、竞品拆解与业务流程建模，主导输出需求文档与产品设计方案。</div>
+      <div class="skill-hl"><span><b>代表成果</b>：云制造平台 68 页产品设计说明书 · 13 张业务表结构设计</span></div>
       <div class="skill-tags">
         <span class="skill-tag core">需求分析</span>
         <span class="skill-tag core">PRD 编写</span>
@@ -1411,7 +1422,8 @@ section{padding:96px 48px;}
           <div class="skill-name">产品工具</div>
         </div>
       </div>
-      <div class="skill-desc">熟练使用主流产品设计与协作工具链，独立产出高保真原型、流程图与规范需求文档。</div>
+      <div class="skill-desc">熟练使用主流产品设计与协作工具链，独立产出高保真原型、流程图与规范需求文档，支撑需求评审与开发对接。</div>
+      <div class="skill-hl"><span><b>常用工具</b>：Axure 原型 · Figma 视觉 · Xmind 脑图 · Visio / ProcessOn 流程</span></div>
       <div class="skill-tags">
         <span class="skill-tag core">Axure</span>
         <span class="skill-tag core">Figma</span>
@@ -1432,7 +1444,8 @@ section{padding:96px 48px;}
           <div class="skill-name">技术开发</div>
         </div>
       </div>
-      <div class="skill-desc">具备前后端全栈落地能力，独立完成数据库设计、接口开发与页面实现。</div>
+      <div class="skill-desc">具备前后端全栈落地能力：独立完成数据库设计、RESTful 接口开发、页面实现与 Linux 部署，能把技术方案完整跑通上线。</div>
+      <div class="skill-hl"><span><b>代表成果</b>：云制造后端模块 · 人脸识别系统部署至阿里云</span></div>
       <div class="skill-tags">
         <span class="skill-tag core">Spring Boot</span>
         <span class="skill-tag core">MySQL</span>
@@ -1453,7 +1466,8 @@ section{padding:96px 48px;}
           <div class="skill-name">AI 应用</div>
         </div>
       </div>
-      <div class="skill-desc">大模型应用与 AI 服务集成：Prompt 工程、RAG 检索增强、Agent 工作流与 MCP 工具接入；掌握效果量化评估（肘部法则 / 轮廓系数）与结果可解释性。</div>
+      <div class="skill-desc">大模型应用与 AI 服务集成：Prompt 工程、RAG 检索增强、Agent 工作流与 MCP 工具接入，掌握效果量化评估与结果可解释性。</div>
+      <div class="skill-hl"><span><b>实践来源</b>：华为云 AI 云实验 8 项 · K-Means 老人健康分级模型落地</span></div>
       <div class="skill-tags">
         <span class="skill-tag core">Prompt 工程</span>
         <span class="skill-tag core">RAG 检索增强</span>
