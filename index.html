@@ -1240,6 +1240,31 @@ section{padding:96px 48px;}
 .award-name{cursor:pointer;transition:color .2s;}
 .award-name:hover{color:var(--accent);text-decoration:underline;}
 
+/* 项目卡片网格 + 详情弹层 */
+.proj-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(238px,1fr));gap:16px;margin-top:6px;}
+.proj-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:20px;cursor:pointer;transition:all .25s ease;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:10px;min-height:216px;}
+.proj-card::before{content:'';position:absolute;left:0;top:0;height:3px;width:100%;background:linear-gradient(90deg,var(--accent),var(--accent-dark));opacity:0;transition:opacity .25s;}
+.proj-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);border-color:var(--accent-light);}
+.proj-card:hover::before{opacity:1;}
+.pc-top{display:flex;justify-content:space-between;align-items:center;gap:8px;}
+.pc-num{font-size:10.5px;letter-spacing:.06em;font-weight:700;color:var(--accent-dark);background:var(--accent-light);padding:3px 9px;border-radius:var(--radius-pill);white-space:nowrap;}
+.pc-role{font-size:11px;color:var(--sub);text-align:right;}
+.pc-title{font-size:17px;font-weight:700;color:var(--ink);line-height:1.35;margin:0;}
+.pc-desc{font-size:12.5px;color:var(--sub);line-height:1.65;flex:1 1 auto;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;}
+.pc-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.pc-tag{font-size:10.5px;color:var(--sub);background:var(--soft);border:1px solid var(--line);padding:2px 8px;border-radius:var(--radius-pill);}
+.pc-foot{font-size:12.5px;font-weight:600;color:var(--accent);display:flex;align-items:center;gap:4px;transition:gap .2s;}
+.proj-card:hover .pc-foot{gap:9px;}
+.proj-store{display:none;}
+.proj-modal{position:fixed;inset:0;background:rgba(15,20,25,.55);display:none;z-index:1200;padding:28px 20px;overflow-y:auto;}
+.proj-modal.active{display:block;}
+.proj-modal-inner{max-width:940px;margin:0 auto;background:#fff;border-radius:var(--radius-lg);position:relative;box-shadow:0 30px 90px rgba(0,0,0,.35);}
+.proj-modal-close{position:sticky;top:14px;float:right;margin:14px 14px 0 0;z-index:2;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:16px;line-height:1;color:var(--sub);}
+.proj-modal-close:hover{background:var(--soft);color:var(--ink);}
+.proj-modal-body{padding:6px 34px 44px;}
+.proj-modal-body .proj-detail>section{max-width:100%;}
+@media (max-width:640px){.proj-modal{padding:0;}.proj-modal-inner{border-radius:0;min-height:100vh;}.proj-modal-body{padding:6px 18px 44px;}}
+
 </style>
 </head>
 <body>
@@ -1428,16 +1453,16 @@ section{padding:96px 48px;}
           <div class="skill-name">AI 应用</div>
         </div>
       </div>
-      <div class="skill-desc">算法应用与 AI 服务集成，掌握效果量化评估（肘部法则 / 轮廓系数）与结果可解释性。</div>
+      <div class="skill-desc">大模型应用与 AI 服务集成：Prompt 工程、RAG 检索增强、Agent 工作流与 MCP 工具接入；掌握效果量化评估（肘部法则 / 轮廓系数）与结果可解释性。</div>
       <div class="skill-tags">
         <span class="skill-tag core">Prompt 工程</span>
-        <span class="skill-tag core">Coze 智能体</span>
-        <span class="skill-tag core">K-Means 聚类</span>
-        <span class="skill-tag">GA 遗传算法</span>
-        <span class="skill-tag">PSO 粒子群</span>
-        <span class="skill-tag">sklearn</span>
+        <span class="skill-tag core">RAG 检索增强</span>
+        <span class="skill-tag core">Agent 工作流</span>
+        <span class="skill-tag core">MCP 工具接入</span>
+        <span class="skill-tag">K-Means 聚类</span>
+        <span class="skill-tag">GA / PSO 算法</span>
+        <span class="skill-tag">Coze 智能体</span>
         <span class="skill-tag">百度 AI API</span>
-        <span class="skill-tag">OpenCV</span>
       </div>
     </div>
 
@@ -1618,7 +1643,40 @@ section{padding:96px 48px;}
     </div>
   </div>
 
-  <section>
+  
+  <div class="proj-cards">
+    <article class="proj-card animate fade-up" data-proj="proj-01" onclick="openProject('proj-01')">
+      <div class="pc-top"><span class="pc-num">PROJECT 01</span><span class="pc-role">组长 · 3 人团队</span></div>
+      <h3 class="pc-title">云制造服务平台</h3>
+      <p class="pc-desc">面向中小制造企业的供需协同平台 —— 解决「接不到单、找不到产能」的核心痛点。13 张业务表 + 68 页产品设计说明书 + 80+ 条测试用例。需求方按工序拆分子任务，平台用 GA / PSO / 加权算法三维匹配（成本/交期/技术），撮合供需双方完成交易履约。</p>
+      <div class="pc-tags"><span class="pc-tag">Vue 3</span><span class="pc-tag">Element UI</span><span class="pc-tag">Spring Boot 2.7</span><span class="pc-tag">MyBatis</span><span class="pc-tag">MySQL 8.0</span><span class="pc-tag">Python（Flask 算法微服务）</span></div>
+      <div class="pc-foot">查看详情 <span aria-hidden="true">→</span></div>
+    </article>
+    <article class="proj-card animate fade-up" data-proj="proj-02" onclick="openProject('proj-02')">
+      <div class="pc-top"><span class="pc-num">PROJECT 02</span><span class="pc-role">组长 · 3 人团队</span></div>
+      <h3 class="pc-title">智慧养老与养生服务管理系统</h3>
+      <p class="pc-desc">基于 K-Means 聚类的一站式健康管理 SaaS —— 数据驱动的「千人千面」养生方案生成系统。覆盖「超管—管理员—家属」三角色，提供健康监测、养生方案、餐饮管理、外出报备、药品管理等六大模块。基于 K-Means 聚类算法对老人健康数据进行分级（选 K=4 由肘部法则+轮廓系数联合确定），自动生成个性化养生方案。</p>
+      <div class="pc-tags"><span class="pc-tag">SSM（Spring</span><span class="pc-tag">Spring MVC</span><span class="pc-tag">MyBatis）</span><span class="pc-tag">MySQL</span><span class="pc-tag">Layui</span><span class="pc-tag">Thymeleaf</span></div>
+      <div class="pc-foot">查看详情 <span aria-hidden="true">→</span></div>
+    </article>
+    <article class="proj-card animate fade-up" data-proj="proj-03" onclick="openProject('proj-03')">
+      <div class="pc-top"><span class="pc-num">PROJECT 03</span><span class="pc-role">独立完成</span></div>
+      <h3 class="pc-title">人脸识别实验系统</h3>
+      <p class="pc-desc">基于百度 AI API V3 + OpenCV 的端到端人脸识别系统 —— 双引擎架构（本地检测 + 云端检索）完整落地。实现「数据采集→云端注册→实时检测→1:N 人脸搜索」完整链路。支持上传图片识别和摄像头实时检测两种模式，已采集 7 人共 91 张人脸照片，识别置信度达 96%~97%。</p>
+      <div class="pc-tags"><span class="pc-tag">Python</span><span class="pc-tag">Streamlit</span><span class="pc-tag">OpenCV</span><span class="pc-tag">百度 AI API V3（detect / search / faceset）</span><span class="pc-tag">阿里云 ECS</span></div>
+      <div class="pc-foot">查看详情 <span aria-hidden="true">→</span></div>
+    </article>
+    <article class="proj-card animate fade-up" data-proj="proj-04" onclick="openProject('proj-04')">
+      <div class="pc-top"><span class="pc-num">PROJECT 04</span><span class="pc-role">独立完成 · 2026</span></div>
+      <h3 class="pc-title">华为云 AI 云实验（8 项）</h3>
+      <p class="pc-desc">备考华为云 HCCDA-AI 期间完成的 8 项官方云实验：Prompt 工程、RAG 知识问答、AgentArts 工作流、MCP 工具接入、Vibe Coding、ModelArts 部署与微调 Qwen3-8B、OCR 发票识别。</p>
+      <div class="pc-tags"><span class="pc-tag">Prompt 工程</span><span class="pc-tag">RAG</span><span class="pc-tag">Agent 工作流</span><span class="pc-tag">MCP</span><span class="pc-tag">Ollama</span><span class="pc-tag">ModelArts</span></div>
+      <div class="pc-foot">查看详情 <span aria-hidden="true">→</span></div>
+    </article>
+  </div>
+
+  <div class="proj-store" id="projStore">
+  <div class="proj-detail" id="proj-01"><section>
   <h2 class="project-banner">
     <span class="num">PROJECT 01</span>
     <span class="name">云制造服务平台</span>
@@ -1832,7 +1890,8 @@ section{padding:96px 48px;}
     <div class="note" data-page-node-id="CAUY29VYLNep8prOHOJk6f"><b data-page-node-id="ToBf46mGpV5v3dA6zFSAAO">差异化结论：</b>头部平台解决「生产端数字化」，重投入、服务大企业；中小企业最痛的是更前端的「接不到单、找不到产能」。本平台<span class="hl" data-page-node-id="z0pFX774Ym9vseMHZzJaZc">不做设备物联、不做工业 APP 生态，只聚焦「需求怎么拆、怎么匹配、怎么履约」这条轻量化交易链路</span>——不用上 ERP、不用改造设备，发布需求就能用。<br data-page-node-id="r9Aw3XqDIxNzekvE2qAfv7"><br data-page-node-id="intKibOUcMVgHKNworFEMW">其中<strong data-page-node-id="BL6xfC7v5rk656dnLYmzta">「需求按工序拆分再分别匹配」</strong>是这个定位下的关键设计：大平台做整包撮合，但中小企业真实需求往往是工序级、需多资源方协作完成的——这正是大平台覆盖不到、而我们能做的缝隙。</div>
   </section>
 
-<section>
+</section></div>
+  <div class="proj-detail" id="proj-02"><section>
   <h2 class="project-banner">
     <span class="num">PROJECT 02</span>
     <span class="name">智慧养老与养生服务管理系统</span>
@@ -1875,9 +1934,8 @@ section{padding:96px 48px;}
         <span class="n">▎ 核心业务功能：采集→存储→展示→分析的完整数据链路</span>
       </figcaption>
     </div>
-</section>
-
-<section>
+</section></div>
+  <div class="proj-detail" id="proj-03"><section>
   <h2 class="project-banner">
     <span class="num">PROJECT 03</span>
     <span class="name">人脸识别实验系统</span>
@@ -1912,15 +1970,47 @@ section{padding:96px 48px;}
         <span class="n">▎ 核心价值：展示完整的第三方 AI 服务接入流程——从申请凭证到配置到验证连通性</span>
       </figcaption>
     </div>
+</section></div>
+  <div class="proj-detail" id="proj-04"><section>
+  <h2 class="project-banner">
+    <span class="num">PROJECT 04</span>
+    <span class="name">华为云 AI 云实验（8 项）</span>
+    <span class="role">独立完成 · 2026</span>
+  </h2>
+  <p class="proj-banner-desc">备考华为云人工智能入门级开发者认证（HCCDA-AI）期间完成的 8 项官方云实验，覆盖大模型应用的完整链路：Prompt 工程、RAG 检索增强、Agent 编排与工作流、MCP 工具接入、模型部署与微调。核心能力是将复杂用户需求拆解为 Agent、Skill、工具及交互流程。</p>
+  <div class="proj-banner-meta">
+    <span><b>角色：</b>独立完成 · 大模型应用 · RAG 检索增强 · Agent 编排 · MCP 工具接入 · 模型部署与微调</span>
+    <span><b>技术栈：</b>Ollama + DeepSeek-R1 + mxbai-embed-large + 智果 AgentArts + MCP + ModelArts + Qwen3-8B + 华为云 OCR</span>
+  </div>
+  <h3 class="sec">01 · 大模型应用与 Prompt 工程</h3>
+  <ul>
+    <li><strong>Prompt 工程实践：</strong>基于 DeepSeek 大模型 API，系统实践上下文问答、Few-shot 样本提示、思维链（CoT）、Prompt Chaining（链接提示）、RAG 与 ReAct 框架，并掌握 API 参数调优与效果对比。</li>
+    <li><strong>RAG 构建专业知识问答机器人：</strong>在弹性云服务器 ECS 上用 Ollama 部署 DeepSeek-R1（1.5B）与 mxbai-embed-large 词向量模型，上传专业数据集构建 RAG 向量数据库，实现专业知识问答。</li>
+  </ul>
+  <h3 class="sec">02 · Agent 编排与工具接入</h3>
+  <ul>
+    <li><strong>AgentArts 工作流 + 知识库：</strong>基于华为云智果 AgentArts，创建对话型工作流、构建知识库检索能力，并用判断节点处理知识库命中 / 未命中分支，完成测试、提交与渠道管理，搭建旅游出行助手。</li>
+    <li><strong>Agent 工具箱（MCP / Skill）：</strong>通过配置 MCP 为应用接入外部工具（同程旅行车票查询），安装 Skill（热搜查询），体验 Skill 与 Rule 协同完成任务目标，理解「从对话框到工具使用」的跨越。</li>
+    <li><strong>Vibe Coding 实战：</strong>以探索模式多轮对话搭建天气出行小助手，集成高德天气 MCP 实现实时天气查询，用前端设计 Skill 优化界面，并借助报错信息引导 AI 修复 Bug，完整体验 AI 驱动的应用开发全流程。</li>
+  </ul>
+  <h3 class="sec">03 · 模型部署与微调 / 应用开发</h3>
+  <ul>
+    <li><strong>ModelArts 部署 Qwen3-8B：</strong>在华为云 ModelArts 部署 Qwen3-8B 模型，进行平台测试并通过 PyCharm 调用部署好的推理接口。</li>
+    <li><strong>Qwen3-8B 微调医疗问诊模型：</strong>将医疗数据集上传至 OBS，完成数据集精练，基于预置模型 Qwen3-8B 完成模型精调（SFT）。</li>
+    <li><strong>增值税发票识别：</strong>基于华为云文字识别（OCR）服务，在 ECS 上开发并部署增值税发票识别 Web 应用，通过公网 IP 访问，掌握 AK/SK 鉴权与云部署。</li>
+  </ul>
+  <div class="note"><b>能力落点：</b>熟悉大模型应用开发主流范式，可将复杂用户需求拆解为 Agent、Skill、工具及交互流程，是 AI 产品经理「需求 → 方案 → 落地」链路的有力支撑。</div>
+</section></div>
+  </div>
 </section>
+<!-- 项目详情弹层 -->
+<div class="proj-modal" id="projModal" onclick="closeProject()">
+  <div class="proj-modal-inner" onclick="event.stopPropagation()">
+    <button class="proj-modal-close" onclick="closeProject()" aria-label="关闭">✕</button>
+    <div class="proj-modal-body" id="projModalBody"></div>
+  </div>
+</div>
 
-  
-
-</section>
-
-
-
-</section>
 
 <!-- ==================== 联系我 ==================== -->
 <section id="contact" style="background:var(--soft);">
@@ -2070,7 +2160,28 @@ document.querySelectorAll('.award-card').forEach(function(card){
   card.style.cursor='pointer';
   card.addEventListener('click', function(){ openCertLightbox(key); });
 });
+// ====== 项目卡片 → 详情弹层 ======
+var projStore = document.getElementById('projStore');
+var projCurrent = null;
+function openProject(id){
+  var el = document.getElementById(id);
+  if(!el) return;
+  var body = document.getElementById('projModalBody');
+  body.appendChild(el);
+  projCurrent = el;
+  document.getElementById('projModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('projModal').scrollTop = 0;
+}
+function closeProject(){
+  var body = document.getElementById('projModalBody');
+  if(projCurrent && projStore){ projStore.appendChild(projCurrent); projCurrent = null; }
+  document.getElementById('projModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeProject(); });
 // ====== Lightbox ======
+
 
 function lbUpdate() {
   var list = window.lbList || [];
