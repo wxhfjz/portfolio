@@ -2050,7 +2050,7 @@ var CERT_TITLES = {
 function openCertLightbox(key){
   var img = CERT_IMAGES[key];
   var cap = CERT_TITLES[key] || key;
-  if(!img){ alert(cap + '：扫描件待补充'); return; }
+  if(!img){ return; }
   openLightbox(img, cap);
 }
 var AWARD_TO_CERT = {
