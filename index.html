@@ -2070,11 +2070,28 @@ document.querySelectorAll('.award-card').forEach(function(card){
 });
 // ====== Lightbox ======
 
-function openLightbox(src, caption) {
-  document.getElementById('lightboxImg').src = src;
-  document.getElementById('lightboxCaption').textContent = caption || '';
+function lbUpdate() {
+  var list = window.lbList || [];
+  document.getElementById('lightboxImg').src = list[window.lbIndex] || '';
+  document.getElementById('lightboxCaption').textContent = (window.lbCaps && window.lbCaps[window.lbIndex]) || '';
+  var hasNav = list.length > 1;
+  document.getElementById('lbCounter').textContent = hasNav ? (window.lbIndex + 1) + ' / ' + list.length : '';
+  document.querySelector('.lb-prev').style.display = hasNav ? '' : 'none';
+  document.querySelector('.lb-next').style.display = hasNav ? '' : 'none';
+}
+function openLightbox(src, caption, list, caps, idx) {
+  window.lbList = (list && list.length) ? list : [src];
+  window.lbCaps = (caps && caps.length) ? caps : [caption || ''];
+  window.lbIndex = (typeof idx === 'number' && idx >= 0) ? idx : 0;
+  lbUpdate();
   document.getElementById('lightbox').classList.add('active');
   document.body.style.overflow = 'hidden';
+}
+function lbStep(d) {
+  var list = window.lbList || [];
+  if (list.length < 2) return;
+  window.lbIndex = (window.lbIndex + d + list.length) % list.length;
+  lbUpdate();
 }
 function closeLightbox() {
   document.getElementById('lightbox').classList.remove('active');
@@ -2131,10 +2148,22 @@ if (firstToggle) firstToggle.classList.add('open');
       window.lbCaps.push(c0 ? c0.textContent.trim() : (img.alt || ''));
       img.addEventListener('click', function(e){
         e.stopPropagation();
+        // 按所在画廊分组收集，箭头只在该组内切换（如「产品界面」的 4 张实拍图）
+        var group = img.closest('.ui-grid, .ui-single') || img.closest('.proj-body, section') || img.parentElement;
+        var imgs = Array.prototype.slice.call(group.querySelectorAll('img'));
+        var list = [], caps = [], idx = 0;
+        imgs.forEach(function(im, i){
+          if (bound.has(im) === false && im !== img) return;
+          var w = im.closest('.ui-single, .ui-grid figure, .img-thumb, figure');
+          var cEl = w ? w.querySelector('b, figcaption, .img-cap, .cap') : null;
+          list.push(im.src);
+          caps.push(cEl ? cEl.textContent.trim() : (im.alt || ''));
+          if (im === img) idx = i;
+        });
         var wrap = img.closest('.ui-single, .ui-grid figure, .img-thumb, figure');
         var capEl = wrap ? wrap.querySelector('b, figcaption, .img-cap, .cap') : null;
         var cap = capEl ? capEl.textContent.trim() : (img.alt || '');
-        openLightbox(img.src, cap);
+        openLightbox(img.src, cap, list, caps, idx);
       });
     });
   });
