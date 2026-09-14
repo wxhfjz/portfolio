@@ -275,8 +275,9 @@ section{padding:90px 48px;max-width:1100px;margin:0 auto;position:relative;}
 }
 .about-text strong{color:var(--ink);font-weight:700;}
 .about-highlight{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px;
 }
+@media (max-width:900px){.about-highlight{grid-template-columns:repeat(2,1fr);}}
 .stat-card{
   position:relative;text-align:center;padding:22px 14px 20px;
   background:var(--soft);border:1px solid transparent;
@@ -332,7 +333,7 @@ section{padding:90px 48px;max-width:1100px;margin:0 auto;position:relative;}
 .info-table tr:hover td{background:var(--soft);border-radius:6px;}
 
 .tag-row{
-  display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:24px;
+  display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;
 }
 .tag{
   padding:8px 6px;background:var(--soft);border:1px solid var(--line);
@@ -1344,34 +1345,38 @@ section{padding:96px 48px;}
   <div class="about-container">
     <div class="about-main animate slide-left delay-1">
       <div class="about-text">
-        <p>2027 届软件工程专业本科生，<strong>中共预备党员</strong>。热衷于用技术解决实际问题，在多个课程项目中担任<strong>组长</strong>，主导从需求分析、方案设计到开发落地的全流程。</p>
-        <p>核心能力覆盖三大方向：<strong>产品设计</strong>（PRD 编写、竞品分析、原型设计）；<strong>技术实现</strong>（全栈开发、数据库设计、API 集成）；<strong>AI 应用落地</strong>（算法调参、智能体搭建、模型部署）。具备将业务需求转化为可交付产品的端到端能力。</p>
-        <p>主导云制造服务平台、智慧养老系统、人脸识别三大项目，历任<strong>组长与核心开发</strong>，覆盖需求分析、数据库设计到全栈开发与算法落地的完整链路；作为青协<strong>部长</strong>管理 <strong>8 人团队</strong>组织校外公益活动。责任心强，执行力好，持续学习新领域。</p>
+        <p>2027 届软件工程本科生，<strong>中共预备党员</strong>，专业排名 <strong>2 / 62（前 3%）</strong>。以「把业务需求翻译成可落地的 AI / 数字化方案」为职业方向，在多个项目中担任<strong>组长</strong>，主导需求分析 → 方案设计 → 开发落地 → 测试验收的全流程。</p>
+        <p>核心能力覆盖三个方向：<strong>产品设计</strong>（PRD 编写、竞品分析、原型与流程建模）；<strong>技术实现</strong>（全栈开发、数据库设计、API 集成与部署）；<strong>AI 应用落地</strong>（Prompt 工程、RAG 检索增强、Agent 工作流与 MCP 工具接入）。具备将复杂用户需求<strong>拆解为 Agent、Skill、工具及交互流程</strong>的能力。</p>
+        <p>主导云制造服务平台、智慧养老系统、人脸识别实验三大项目，历任<strong>组长与核心开发</strong>，覆盖需求分析、数据库设计（13 + 12 张表）到全栈开发与算法落地；并完成<strong>华为云 AI 云实验 8 项</strong>（RAG 问答、Agent 编排、模型部署与微调）。作为青协<strong>部长</strong>管理 <strong>8 人团队</strong>，统筹校外公益活动，责任心与执行力俱佳。</p>
       </div>
       <div class="about-highlight">
-        <div class="stat-card"><span class="stat-num">3</span><span class="stat-label">主导项目</span></div>
+        <div class="stat-card"><span class="stat-num">4</span><span class="stat-label">主导项目</span></div>
+        <div class="stat-card"><span class="stat-num">8</span><span class="stat-label">AI 云实验</span></div>
         <div class="stat-card"><span class="stat-num">3%</span><span class="stat-label">专业排名</span></div>
         <div class="stat-card"><span class="stat-num">80+</span><span class="stat-label">测试用例</span></div>
       </div>
       <div class="tag-row">
         <span class="tag">需求分析</span>
-        <span class="tag">PRD / 设计</span>
+        <span class="tag">PRD · 原型</span>
         <span class="tag">数据库设计</span>
-        <span class="tag">K-Means/GA/PSO</span>
-        <span class="tag">Py/Java/SB</span>
+        <span class="tag">Prompt 工程</span>
+        <span class="tag">RAG 检索增强</span>
+        <span class="tag">Agent 工作流</span>
+        <span class="tag">MCP 工具接入</span>
+        <span class="tag">K-Means / GA / PSO</span>
+        <span class="tag">Py · Java · Spring Boot</span>
         <span class="tag">Vue + Pinia</span>
-        <span class="tag">百度 AI API</span>
         <span class="tag">Linux 部署</span>
-        <span class="tag">扣子 Coze</span>
-        <span class="tag">ECharts</span>
+        <span class="tag">百度 AI API</span>
       </div>
     </div>
     <div class="info-panel animate slide-right delay-2">
       <div class="info-panel-title">基本信息</div>
       <table class="info-table">
         <tr><th>学校</th><td>巢湖学院</td></tr>
-        <th>学院</th><td>计算机与人工智能学院</td></tr>
+        <tr><th>学院</th><td>计算机与人工智能学院</td></tr>
         <tr><th>专业</th><td>软件工程</td></tr>
+        <tr><th>求职意向</th><td>AI 产品 / 解决方案</td></tr>
         <tr><th>GPA</th><td>3.8 / 5.0</td></tr>
         <tr><th>排名</th><td>2 / 62（前 3%）</td></tr>
         <tr><th>政治面貌</th><td>中共预备党员</td></tr>
