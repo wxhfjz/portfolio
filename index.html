@@ -3,7 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>刘娟 · 2027届</title>
+<title>刘娟 · 2027届 | 产品经理 / 解决方案·售前 / 测试工程师</title>
+<meta name="description" content="巢湖学院软件工程 2027 届本科生，专业排名 2/62（前 3%）。主导云制造服务平台、智能养老等全流程项目，完成华为云 AI 云实验 8 项。求职方向：产品经理、解决方案 / 售前工程师、测试工程师、软件开发等技术岗。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="刘娟 · 2027届 | 产品经理 / 解决方案·售前 / 测试工程师">
+<meta property="og:description" content="巢湖学院软件工程 2027 届本科生，专业排名 2/62（前 3%）。主导多个全流程项目，完成华为云 AI 云实验 8 项。">
+<meta property="og:url" content="https://wxhfjz.github.io/portfolio/">
+<meta name="twitter:card" content="summary">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%231d9bf0'/><stop offset='1' stop-color='%230d6efd'/></linearGradient></defs><rect width='64' height='64' rx='15' fill='url(%23g)'/><path d='M32 11 C34.6 22.6 41.4 29.4 53 32 C41.4 34.6 34.6 41.4 32 53 C29.4 41.4 22.6 34.6 11 32 C22.6 29.4 29.4 22.6 32 11 Z' fill='white'/></svg>">
 <meta name="theme-color" content="#1d9bf0">
 <style>
@@ -1287,6 +1293,92 @@ section{padding:96px 48px;}
 .proj-modal-body .ui-grid{margin:24px 0;}
 .proj-modal-body h3.sec:first-of-type{margin-top:24px;}
 .proj-modal-body h2.project-banner:first-child{margin-top:0;}
+
+/* ========== v9 体验增强 ========== */
+
+/* 1) 锚点定位补偿：固定导航高 60px，点击导航后标题不再被压住 */
+section[id]{scroll-margin-top:78px;}
+
+/* 1b) Hero 高度扣掉 .page 的 60px 顶距 → 首屏正好一屏，滚动提示不被挤出视口 */
+.hero{min-height:calc(100vh - 60px);}
+
+/* 2) Hero 意向方向：长句改胶囊标签，扫读更快 + hover 微交互 */
+.hero-roles{
+  display:flex;flex-wrap:wrap;align-items:center;gap:9px;
+  margin:0 0 28px;max-width:620px;
+}
+.hero-roles-label{
+  font-size:var(--fs-sm);color:var(--sub);font-weight:700;
+  letter-spacing:.02em;margin-right:2px;
+}
+.role-chip{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 14px;border-radius:var(--radius-pill);
+  font-size:var(--fs-sm);font-weight:700;color:var(--blue-700);
+  background:rgba(232,245,253,.92);border:1px solid var(--blue-200);
+  box-shadow:0 1px 2px rgba(29,155,240,.06);cursor:default;
+  transition:transform var(--dur) var(--ease),background var(--dur) var(--ease),
+             color var(--dur) var(--ease),box-shadow var(--dur) var(--ease),
+             border-color var(--dur) var(--ease);
+}
+.role-chip:hover{
+  background:var(--accent);color:#fff;border-color:var(--accent);
+  transform:translateY(-2px);box-shadow:0 8px 20px rgba(29,155,240,.28);
+}
+
+/* 3) Hero 向下滚动提示（仅桌面显示，移动端易误触） */
+.hero-scroll{
+  position:absolute;left:50%;bottom:28px;transform:translateX(-50%);
+  width:26px;height:44px;border:2px solid rgba(15,20,25,.16);border-radius:15px;
+  display:flex;justify-content:center;padding-top:8px;z-index:2;
+  transition:border-color var(--dur) var(--ease);
+}
+.hero-scroll:hover{border-color:var(--accent);}
+.hero-scroll i{
+  width:4px;height:8px;border-radius:2px;background:var(--accent);display:block;
+  animation:scrollDot 1.7s cubic-bezier(.4,0,.2,1) infinite;
+}
+@keyframes scrollDot{
+  0%{transform:translateY(0);opacity:1;}
+  65%{transform:translateY(15px);opacity:0;}
+  100%{transform:translateY(15px);opacity:0;}
+}
+
+/* 4) 导航「联系我」CTA：与普通链接区分 */
+.nav-cta{
+  display:inline-flex;align-items:center;
+  padding:7px 18px;background:var(--gradient-accent);color:#fff!important;
+  border-radius:var(--radius-pill);font-size:var(--fs-xs);font-weight:700;letter-spacing:.02em;
+  box-shadow:0 4px 14px rgba(29,155,240,.26);
+  transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease);
+}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(29,155,240,.38);}
+.nav-links a.nav-cta::after{display:none;}
+.nav-links a.nav-cta.active{color:#fff!important;}
+
+/* 5) 联系方式：点击复制 + 提示 */
+.contact-item[data-copy]{cursor:pointer;}
+.contact-item[data-copy]:hover{border-color:var(--blue-200);}
+.contact-copy-hint{
+  font-size:11px;color:var(--accent);font-weight:700;opacity:0;
+  margin-top:6px;transition:opacity var(--dur) var(--ease);
+}
+.contact-item[data-copy]:hover .contact-copy-hint{opacity:1;}
+.toast-copy{
+  position:fixed;left:50%;bottom:40px;transform:translate(-50%,20px);
+  background:var(--ink);color:#fff;font-size:var(--fs-sm);font-weight:600;
+  padding:11px 22px;border-radius:var(--radius-pill);z-index:3000;
+  opacity:0;pointer-events:none;box-shadow:var(--shadow-lg);
+  transition:opacity var(--dur) var(--ease),transform var(--dur) var(--ease);
+}
+.toast-copy.show{opacity:1;transform:translate(-50%,0);}
+
+/* 6) 小屏收敛：滚动提示、胶囊字号 */
+@media (max-width:760px){
+  .hero-scroll{display:none;}
+  .hero-roles{gap:7px;}
+  .role-chip{font-size:var(--fs-xs);padding:5px 11px;}
+}
 </style>
 </head>
 <body>
@@ -1306,7 +1398,7 @@ section{padding:96px 48px;}
     <li><a href="#education">教育</a></li>
     <li><a href="#campus">校园经历</a></li>
     <li><a href="#projects">项目</a></li>
-    <li><a href="#contact">联系</a></li>
+    <li><a href="#contact" class="nav-cta">联系我</a></li>
   </ul>
 </nav>
 
@@ -1323,16 +1415,22 @@ section{padding:96px 48px;}
         巢湖学院计算机与人工智能学院，专业排名 <strong>2/62</strong>（前 3%）。
         从需求分析、方案设计到开发落地，主导过 <strong>B 端产品平台</strong>、
         <strong>AI 算法应用</strong>、<strong>智能系统工程</strong> 等多个全流程项目。
-        正在寻找 <strong>产品经理（B 端 / AI 产品）</strong>、<strong>解决方案 / 售前工程师</strong>、<strong>测试工程师</strong>、<strong>软件开发等技术岗</strong> 方向的机会，
-        同时关注<strong>银行信息科技岗</strong>与<strong>管培生</strong>岗位。
       </p>
-      <div class="hero-meta animate fade-up delay-2">
+      <div class="hero-roles animate fade-up delay-2">
+        <span class="hero-roles-label">正在寻找</span>
+        <span class="role-chip">产品经理（B 端 / AI 产品）</span>
+        <span class="role-chip">解决方案 / 售前工程师</span>
+        <span class="role-chip">测试工程师</span>
+        <span class="role-chip">软件开发等技术岗</span>
+        <span class="role-chip">银行信息科技岗 · 管培生</span>
+      </div>
+      <div class="hero-meta animate fade-up delay-3">
         <span>📍 合肥 / 南京 / 苏州</span>
         <span>🎓 巢湖学院 · 软件工程</span>
         <span>📧 liujuan_2027@126.com</span>
         <span>🚫 不含销售岗</span>
       </div>
-      <div class="hero-actions animate fade-up delay-3">
+      <div class="hero-actions animate fade-up delay-4">
         <a href="#projects" class="btn-primary">查看项目 →</a>
         <a href="#contact" class="btn-outline">联系我</a>
       </div>
@@ -1344,6 +1442,7 @@ section{padding:96px 48px;}
       <div class="hero-status">● 开放机会中</div>
     </div>
   </div>
+  <a class="hero-scroll" href="#about" aria-label="向下滚动查看"><i></i></a>
 </div>
 
 <!-- ==================== 关于我 ==================== -->
@@ -2054,20 +2153,23 @@ section{padding:96px 48px;}
     </div>
   </div>
   <div class="contact-grid">
-    <div class="contact-item animate fade-up delay-1">
+    <div class="contact-item animate fade-up delay-1" data-copy="liujuan_2027@126.com" title="点击复制邮箱">
       <div class="contact-icon">📧</div>
       <div class="contact-label">Email</div>
       <div class="contact-value">liujuan_2027<br>@126.com</div>
+      <div class="contact-copy-hint">点击复制</div>
     </div>
-    <div class="contact-item animate fade-up delay-2">
+    <div class="contact-item animate fade-up delay-2" data-copy="19855305276" title="点击复制手机号">
       <div class="contact-icon">📱</div>
       <div class="contact-label">Phone</div>
       <div class="contact-value">19855305276</div>
+      <div class="contact-copy-hint">点击复制</div>
     </div>
-    <div class="contact-item animate fade-up delay-3">
+    <div class="contact-item animate fade-up delay-3" data-copy="LJ19855305276" title="点击复制微信号">
       <div class="contact-icon">💬</div>
       <div class="contact-label">WeChat</div>
       <div class="contact-value">LJ19855305276</div>
+      <div class="contact-copy-hint">点击复制</div>
     </div>
     <div class="contact-item animate fade-up delay-4">
       <div class="contact-icon">📍</div>
@@ -2085,6 +2187,9 @@ section{padding:96px 48px;}
 
 <!-- 返回顶部 -->
 <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="返回顶部">↑</button>
+
+<!-- 复制成功提示 -->
+<div class="toast-copy" id="toastCopy" role="status" aria-live="polite"></div>
 
 <!-- Lightbox -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
@@ -2378,6 +2483,55 @@ window.addEventListener('scroll', function(){
 document.querySelectorAll('.skill-tag,.course-tag,.tag').forEach(function(t){
   t.setAttribute('tabindex','0');
 });
+
+// 6) 联系方式：点击复制 + 轻提示
+(function(){
+  var toast = document.getElementById('toastCopy');
+  var timer = null;
+  function showToast(msg){
+    if(!toast) return;
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(timer);
+    timer = setTimeout(function(){ toast.classList.remove('show'); }, 1700);
+  }
+  function fallbackCopy(txt, done){
+    var ta = document.createElement('textarea');
+    ta.value = txt;
+    ta.setAttribute('readonly','');
+    ta.style.cssText = 'position:fixed;top:-1000px;opacity:0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); done(); } catch(e) {}
+    document.body.removeChild(ta);
+  }
+  document.querySelectorAll('[data-copy]').forEach(function(el){
+    el.addEventListener('click', function(){
+      var txt = el.getAttribute('data-copy') || '';
+      if(!txt) return;
+      var done = function(){ showToast('已复制：' + txt); };
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(txt).then(done, function(){ fallbackCopy(txt, done); });
+      } else {
+        fallbackCopy(txt, done);
+      }
+    });
+  });
+})();
+
+// 7) Hero 向下滚动提示：滚过首屏后淡出，避免与内容重叠
+(function(){
+  var sc = document.querySelector('.hero-scroll');
+  if(!sc) return;
+  var onScroll = function(){
+    var hide = window.scrollY > 80;
+    sc.style.opacity = hide ? '0' : '1';
+    sc.style.pointerEvents = hide ? 'none' : '';
+  };
+  sc.style.transition = 'opacity .3s ease, border-color .26s ease';
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
 
 </script>
 </body>
