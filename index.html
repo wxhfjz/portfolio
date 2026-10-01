@@ -370,6 +370,8 @@ section{padding:90px 48px;max-width:1100px;margin:0 auto;position:relative;}
 .skills-grid{
   display:grid;grid-template-columns:repeat(2,1fr);gap:20px;
 }
+.skill-card.wide{grid-column:span 2;}
+.skill-card.wide .skill-tags{max-width:100%;}
 .skill-card{
   background:#fff;border:1px solid var(--line);border-radius:var(--radius);
   padding:26px 28px;box-shadow:var(--shadow-sm);
@@ -461,6 +463,7 @@ section{padding:90px 48px;max-width:1100px;margin:0 auto;position:relative;}
 
 @media(max-width:820px){
   .skills-grid{grid-template-columns:1fr;}
+  .skill-card.wide{grid-column:span 1;}
 }
 
 /* ========== 教育与奖项 v3 ========== */
@@ -1470,29 +1473,33 @@ section[id]{scroll-margin-top:78px;}
   <div class="about-container">
     <div class="about-main animate slide-left delay-1">
       <div class="about-text">
-        <p>2027 届软件工程本科生，<strong>中共预备党员</strong>，专业排名 <strong>2 / 62（前 3%）</strong>。以「把业务需求翻译成可落地的 AI / 数字化方案」为职业方向，在多个项目中担任<strong>组长</strong>，主导需求分析 → 方案设计 → 开发落地 → 测试验收的全流程。</p>
-        <p>核心能力覆盖三个方向：<strong>产品设计</strong>（PRD 编写、竞品分析、原型与流程建模）；<strong>技术实现</strong>（全栈开发、数据库设计、API 集成与部署）；<strong>AI 应用落地</strong>（Prompt 工程、RAG 检索增强、Agent 工作流与 MCP 工具接入）。具备将复杂用户需求<strong>拆解为 Agent、Skill、工具及交互流程</strong>的能力。</p>
-        <p>主导云制造服务平台、智能养老系统、人脸识别实验三大项目，历任<strong>组长与核心开发</strong>，覆盖需求分析、数据库设计（13 + 12 张表）到全栈开发与算法落地；并完成<strong>华为云 AI 云实验 8 项</strong>（RAG 问答、Agent 编排、模型部署与微调）。作为青协<strong>部长</strong>管理 <strong>8 人团队</strong>，统筹校外公益活动，责任心与执行力俱佳。</p>
+        <p>2027 届软件工程本科生，<strong>中共预备党员</strong>，专业排名 <strong>2 / 62（前 3%）</strong>。求职方向聚焦 <strong>AI 产品经理 / 解决方案（售前）工程师 / 软件测试 / 信息科技岗</strong>，擅长把业务需求翻译成可落地的产品方案与数字化实现，在多个项目中担任<strong>组长</strong>，独立主导<strong>需求分析 → 方案设计 → 原型输出 → 开发落地 → 测试验收 → 交付上线</strong>的全流程。</p>
+        <p>核心能力覆盖三个方向：<strong>产品设计</strong>（需求调研、竞品分析、PRD 编写、原型设计与流程建模、需求评审）；<strong>技术实现</strong>（Java / Spring Boot 后端开发、MySQL 数据库设计、RESTful API 设计与集成、Linux 部署运维）；<strong>AI 应用落地</strong>（Prompt 工程、RAG 检索增强、Agent 工作流、MCP 工具接入、大模型部署与微调）。具备将复杂客户需求<strong>拆解为 Agent、Skill、工具及交互流程</strong>的能力，熟悉<strong>方案宣讲、需求对接与技术方案输出</strong>。</p>
+        <p>主导云制造服务平台、智能养老系统两大平台级项目，独立完成人脸识别系统；覆盖需求分析、数据库设计（13 + 12 张表）到全栈开发与算法落地，累计设计并执行<strong>约 80 条测试用例</strong>、输出 <strong>68 页产品设计说明书</strong>；并完成<strong>华为云 AI 云实验 8 项</strong>（Prompt 工程、RAG 问答、Agent 编排、MCP 接入、模型部署与微调）。作为青协<strong>部长</strong>管理 <strong>8 人团队</strong>，统筹活动策划与落地，具备良好的<strong>沟通表达、跨角色协作与项目管理</strong>能力。</p>
       </div>
       <div class="about-highlight">
-        <div class="stat-card"><span class="stat-num">4</span><span class="stat-label">主导项目</span></div>
+        <div class="stat-card"><span class="stat-num">4</span><span class="stat-label">完整项目</span></div>
         <div class="stat-card"><span class="stat-num">8</span><span class="stat-label">AI 云实验</span></div>
         <div class="stat-card"><span class="stat-num">3%</span><span class="stat-label">专业排名</span></div>
-        <div class="stat-card"><span class="stat-num">80</span><span class="stat-label">测试用例</span></div>
+        <div class="stat-card"><span class="stat-num">80+</span><span class="stat-label">测试用例</span></div>
       </div>
       <div class="tag-row">
         <span class="tag">需求分析</span>
-        <span class="tag">PRD · 原型</span>
+        <span class="tag">PRD 编写</span>
+        <span class="tag">原型设计</span>
+        <span class="tag">竞品分析</span>
+        <span class="tag">方案设计</span>
+        <span class="tag">客户需求对接</span>
+        <span class="tag">测试用例设计</span>
+        <span class="tag">缺陷管理</span>
         <span class="tag">数据库设计</span>
         <span class="tag">Prompt 工程</span>
         <span class="tag">RAG 检索增强</span>
         <span class="tag">Agent 工作流</span>
         <span class="tag">MCP 工具接入</span>
-        <span class="tag">K-Means / GA / PSO</span>
-        <span class="tag">Py · Java · Spring Boot</span>
-        <span class="tag">Vue + Pinia</span>
+        <span class="tag">Java · Spring Boot</span>
+        <span class="tag">Python</span>
         <span class="tag">Linux 部署</span>
-        <span class="tag">百度 AI API</span>
       </div>
     </div>
     <div class="info-panel animate slide-right delay-2">
@@ -1501,7 +1508,7 @@ section[id]{scroll-margin-top:78px;}
         <tr><th>学校</th><td>巢湖学院</td></tr>
         <tr><th>学院</th><td>计算机与人工智能学院</td></tr>
         <tr><th>专业</th><td>软件工程</td></tr>
-        <tr><th>求职意向</th><td>产品经理 · 解决方案 / 售前 · 测试 · 软件开发</td></tr>
+        <tr><th>求职意向</th><td>AI 产品经理 · 解决方案 / 售前 · 软件测试 · 信息科技岗</td></tr>
         <tr><th>GPA</th><td>3.8 / 5.0</td></tr>
         <tr><th>排名</th><td>2 / 62（前 3%）</td></tr>
         <tr><th>政治面貌</th><td>中共预备党员</td></tr>
@@ -1530,16 +1537,17 @@ section[id]{scroll-margin-top:78px;}
           <div class="skill-name">产品能力</div>
         </div>
       </div>
-      <div class="skill-desc">从需求洞察到方案落地的完整闭环：用户访谈、竞品拆解与业务流程建模，主导输出需求文档与产品设计方案。</div>
+      <div class="skill-desc">从需求洞察到方案落地的完整闭环：需求调研与用户访谈、竞品拆解、业务流程建模，主导输出需求文档、产品设计方案与解决方案材料，并完成方案宣讲与需求评审。</div>
       <div class="skill-hl"><span><b>代表成果</b>：云制造平台 68 页产品设计说明书 · 13 张业务表结构设计</span></div>
       <div class="skill-tags">
         <span class="skill-tag core">需求分析</span>
         <span class="skill-tag core">PRD 编写</span>
         <span class="skill-tag core">原型设计</span>
-        <span class="skill-tag">竞品调研</span>
+        <span class="skill-tag core">竞品分析</span>
+        <span class="skill-tag">需求调研</span>
         <span class="skill-tag">用户访谈</span>
-        <span class="skill-tag">用户旅程</span>
         <span class="skill-tag">业务流程建模</span>
+        <span class="skill-tag">方案设计与宣讲</span>
         <span class="skill-tag">数据分析</span>
       </div>
     </div>
@@ -1574,16 +1582,17 @@ section[id]{scroll-margin-top:78px;}
           <div class="skill-name">技术开发</div>
         </div>
       </div>
-      <div class="skill-desc">具备前后端全栈落地能力：独立完成数据库设计、RESTful 接口开发、页面实现与 Linux 部署，能把技术方案完整跑通上线。</div>
-      <div class="skill-hl"><span><b>代表成果</b>：云制造后端模块 · 人脸识别系统部署至阿里云</span></div>
+      <div class="skill-desc">具备前后端全栈落地能力：可独立完成数据库设计、RESTful 接口开发、页面实现与 Linux 环境部署，能独立完成从设计到部署的完整实现。</div>
+      <div class="skill-hl"><span><b>代表成果</b>：云制造后端模块 · 人脸识别系统部署至阿里云 ECS</span></div>
       <div class="skill-tags">
+        <span class="skill-tag core">Java</span>
         <span class="skill-tag core">Spring Boot</span>
         <span class="skill-tag core">MySQL</span>
-        <span class="skill-tag core">Vue.js 3</span>
-        <span class="skill-tag">Java</span>
         <span class="skill-tag">Python</span>
+        <span class="skill-tag">Vue.js 3</span>
         <span class="skill-tag">MyBatis</span>
         <span class="skill-tag">RESTful API</span>
+        <span class="skill-tag">Linux 部署</span>
         <span class="skill-tag">Git</span>
       </div>
     </div>
@@ -1596,17 +1605,41 @@ section[id]{scroll-margin-top:78px;}
           <div class="skill-name">AI 应用</div>
         </div>
       </div>
-      <div class="skill-desc">大模型应用与 AI 服务集成：Prompt 工程、RAG 检索增强、Agent 工作流与 MCP 工具接入，掌握效果量化评估与结果可解释性。</div>
-      <div class="skill-hl"><span><b>实践来源</b>：华为云 AI 云实验 8 项 · K-Means 老人健康分级模型落地</span></div>
+      <div class="skill-desc">大模型应用与 AI 服务集成：Prompt 工程、RAG 检索增强、Agent 编排、MCP 工具接入与大模型部署微调，掌握效果量化评估与结果可解释性。</div>
+      <div class="skill-hl"><span><b>实践来源</b>：华为云 AI 云实验 8 项 · 华为云 HCCDA-AI 认证</span></div>
       <div class="skill-tags">
         <span class="skill-tag core">Prompt 工程</span>
         <span class="skill-tag core">RAG 检索增强</span>
         <span class="skill-tag core">Agent 工作流</span>
         <span class="skill-tag core">MCP 工具接入</span>
+        <span class="skill-tag">大模型部署与微调</span>
         <span class="skill-tag">K-Means 聚类</span>
-        <span class="skill-tag">GA / PSO 算法</span>
         <span class="skill-tag">Coze 智能体</span>
         <span class="skill-tag">百度 AI API</span>
+      </div>
+    </div>
+
+    <div class="skill-card wide animate fade-up delay-4">
+      <div class="skill-head">
+        <div class="skill-icon">🧪</div>
+        <div>
+          <div class="skill-cat">Testing & Quality</div>
+          <div class="skill-name">测试与质量保障</div>
+        </div>
+      </div>
+      <div class="skill-desc">熟悉软件测试全流程与用例设计方法：从需求评审、测试计划、用例设计（等价类 / 边界值 / 场景法）到缺陷跟踪与回归验证，能独立完成功能测试、接口测试（Postman）与安全测试，并输出规范化测试报告。</div>
+      <div class="skill-hl"><span><b>代表成果</b>：云制造平台约 80 条测试用例 · 8 个端到端集成场景（TC001–TC008）· 缺陷分级 P0–P3 管理机制</span></div>
+      <div class="skill-tags">
+        <span class="skill-tag core">测试用例设计</span>
+        <span class="skill-tag core">功能测试</span>
+        <span class="skill-tag core">接口测试</span>
+        <span class="skill-tag core">缺陷跟踪与管理</span>
+        <span class="skill-tag">等价类 / 边界值</span>
+        <span class="skill-tag">场景法</span>
+        <span class="skill-tag">Postman</span>
+        <span class="skill-tag">Jira</span>
+        <span class="skill-tag">回归测试</span>
+        <span class="skill-tag">测试报告</span>
       </div>
     </div>
 
@@ -1792,12 +1825,12 @@ section[id]{scroll-margin-top:78px;}
     <article class="proj-card animate fade-up" data-proj="proj-01" onclick="openProject('proj-01')">
       <div class="pc-top"><span class="pc-num">PROJECT 01</span><span class="pc-role">组长 · 6 人团队</span></div>
       <h3 class="pc-title">云制造服务平台</h3>
-      <p class="pc-desc">面向中小制造企业的供需协同平台 —— 解决「接不到单、找不到产能」的核心痛点。13 张业务表 + 68 页产品设计说明书 + 约 80 条测试用例。需求方按工序拆分子任务，平台用 GA / PSO / 加权算法三维匹配（成本/交期/技术），撮合供需双方完成交易履约。</p>
+      <p class="pc-desc">面向中小制造企业的供需协同平台 —— 解决「接不到单、找不到产能」的核心痛点。13 张业务表 + 68 页产品设计说明书 + 约 80 条测试用例。完成需求调研、竞品分析到方案设计的完整产品链路，需求方按工序拆分子任务，平台用 GA / PSO / 加权算法三维匹配（成本/交期/技术），撮合供需双方完成交易履约。</p>
       <div class="pc-tags"><span class="pc-tag">Vue 3</span><span class="pc-tag">Element UI</span><span class="pc-tag">Spring Boot 2.7</span><span class="pc-tag">MyBatis</span><span class="pc-tag">MySQL 8.0</span><span class="pc-tag">Python（Flask 算法微服务）</span></div>
       <div class="pc-foot">查看详情 <span aria-hidden="true">→</span></div>
     </article>
     <article class="proj-card animate fade-up" data-proj="proj-02" onclick="openProject('proj-02')">
-      <div class="pc-top"><span class="pc-num">PROJECT 02</span><span class="pc-role">组长 · 3 人团队</span></div>
+      <div class="pc-top"><span class="pc-num">PROJECT 02</span><span class="pc-role">组长 · 核心开发</span></div>
       <h3 class="pc-title">智能养老及养生服务管理系统</h3>
       <p class="pc-desc">基于 K-Means 聚类的一站式健康管理 SaaS —— 数据驱动的「千人千面」养生方案生成系统。覆盖「超管—管理员—家属」三角色，提供健康监测、养生方案、餐饮管理、外出报备、药品管理等六大模块。基于 K-Means 聚类算法对老人健康数据进行分级（选 K=4 由肘部法则+轮廓系数联合确定），自动生成个性化养生方案。</p>
       <div class="pc-tags"><span class="pc-tag">SSM（Spring</span><span class="pc-tag">Spring MVC</span><span class="pc-tag">MyBatis）</span><span class="pc-tag">MySQL</span><span class="pc-tag">Layui</span><span class="pc-tag">Thymeleaf</span></div>
@@ -1806,14 +1839,14 @@ section[id]{scroll-margin-top:78px;}
     <article class="proj-card animate fade-up" data-proj="proj-03" onclick="openProject('proj-03')">
       <div class="pc-top"><span class="pc-num">PROJECT 03</span><span class="pc-role">独立完成</span></div>
       <h3 class="pc-title">人脸识别实验系统</h3>
-      <p class="pc-desc">基于百度 AI API V3 + OpenCV 的端到端人脸识别系统 —— 双引擎架构（本地检测 + 云端检索）完整落地。实现「数据采集→云端注册→实时检测→1:N 人脸搜索」完整链路。支持上传图片识别和摄像头实时检测两种模式，已采集 7 人共 91 张人脸照片，识别置信度达 96%~97%。</p>
+      <p class="pc-desc">基于百度 AI API V3 + OpenCV 的端到端人脸识别系统 —— 双引擎架构（本地检测 + 云端检索）完整落地。实现「数据采集→云端注册→实时检测→1:N 人脸搜索」完整链路。支持上传图片识别和摄像头实时检测两种模式，已采集 7 人共 91 张人脸照片，识别结果稳定可靠。</p>
       <div class="pc-tags"><span class="pc-tag">Python</span><span class="pc-tag">Streamlit</span><span class="pc-tag">OpenCV</span><span class="pc-tag">百度 AI API V3（detect / search / faceset）</span><span class="pc-tag">阿里云 ECS</span></div>
       <div class="pc-foot">查看详情 <span aria-hidden="true">→</span></div>
     </article>
     <article class="proj-card animate fade-up" data-proj="proj-04" onclick="openProject('proj-04')">
       <div class="pc-top"><span class="pc-num">PROJECT 04</span><span class="pc-role">独立完成 · 2026</span></div>
       <h3 class="pc-title">华为云 AI 云实验（8 项）</h3>
-      <p class="pc-desc">备考华为云 HCCDA-AI 期间完成的 8 项官方云实验：Prompt 工程、RAG 知识问答、AgentArts 工作流、MCP 工具接入、Vibe Coding、ModelArts 部署与微调 Qwen3-8B、OCR 发票识别。</p>
+      <p class="pc-desc">备考华为云 HCCDA-AI 期间完成的 8 项官方云实验：Prompt 工程、RAG 知识问答、AgentArts 工作流、MCP 工具接入、Vibe Coding、ModelArts 部署与微调 Qwen3-8B、OCR 发票识别。核心能力是将复杂用户需求拆解为 Agent、Skill、工具及交互流程。</p>
       <div class="pc-tags"><span class="pc-tag">Prompt 工程</span><span class="pc-tag">RAG</span><span class="pc-tag">Agent 工作流</span><span class="pc-tag">MCP</span><span class="pc-tag">Ollama</span><span class="pc-tag">ModelArts</span></div>
       <div class="pc-foot">查看详情 <span aria-hidden="true">→</span></div>
     </article>
@@ -2039,11 +2072,11 @@ section[id]{scroll-margin-top:78px;}
   <h2 class="project-banner">
     <span class="num">PROJECT 02</span>
     <span class="name">智能养老及养生服务管理系统</span>
-    <span class="role">组长 · 3 人团队</span>
+    <span class="role">组长 · 核心开发</span>
   </h2>
   <p class="proj-banner-desc">基于 K-Means 聚类的一站式健康管理 SaaS —— 数据驱动的「千人千面」养生方案生成系统。覆盖「超管—管理员—家属」三角色，提供健康监测、养生方案、餐饮管理、外出报备、药品管理等六大模块。基于 K-Means 聚类算法对老人健康数据进行分级（选 K=4 由肘部法则+轮廓系数联合确定），自动生成个性化养生方案。</p>
   <div class="proj-banner-meta">
-    <span><b>角色：</b>组长（3 人团队）· 需求分析 · 数据库设计（12 张表）· 后端接口 · 前端 Vue.js 页面</span>
+    <span><b>角色：</b>组长 · 需求分析与整体架构设计 · 数据库设计（12 张表）· 核心模块开发（登录鉴权 / 安全管理 / 收费标准）· K-Means 健康分级算法</span>
     <span><b>技术栈：</b>SSM（Spring + Spring MVC + MyBatis）+ MySQL + Layui + Thymeleaf + PageHelper + Python（K-Means 健康分级）</span>
   </div>
   <div class="ui-single">
@@ -2085,9 +2118,9 @@ section[id]{scroll-margin-top:78px;}
     <span class="name">人脸识别实验系统</span>
     <span class="role">独立完成</span>
   </h2>
-  <p class="proj-banner-desc">基于百度 AI API V3 + OpenCV 的端到端人脸识别系统 —— 双引擎架构（本地检测 + 云端检索）完整落地。实现「数据采集→云端注册→实时检测→1:N 人脸搜索」完整链路。支持上传图片识别和摄像头实时检测两种模式，已采集 7 人共 91 张人脸照片，识别置信度达 96%~97%。</p>
+  <p class="proj-banner-desc">基于百度 AI API V3 + OpenCV 的端到端人脸识别系统 —— 双引擎架构（本地检测 + 云端检索）完整落地。实现「数据采集→云端注册→实时检测→1:N 人脸搜索」完整链路。支持上传图片识别和摄像头实时检测两种模式，已采集 7 人共 91 张人脸照片，识别结果稳定可靠。</p>
   <div class="proj-banner-meta">
-    <span><b>角色：</b>独立完成 · 需求分析 · 系统设计 · Python 全栈开发 · 百度 AI API 集成 · 部署上线</span>
+    <span><b>角色：</b>独立完成 · 需求分析 · 系统设计 · Python 全栈开发 · 第三方 AI 服务集成 · 云端部署</span>
     <span><b>技术栈：</b>Python + Streamlit + OpenCV + 百度 AI API V3（detect / search / faceset）+ 阿里云 ECS</span>
   </div>
   <div class="ui-single">
